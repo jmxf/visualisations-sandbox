@@ -13,4 +13,5 @@ edge_list <- inner_join(
   by = c("step" = "prev_step"),
   suffix = c("_from", "_to")
 ) %>% 
-
+  subset(select = -c(prev_step)) %>% 
+  rename(step_from = step)
